@@ -34,6 +34,15 @@ def glucose_average_6hour():
     print(f'6 hour blood glucose average is {round(bg_6hour_average, 2)}')
 
 
+def glucose_average_24hour():
+    bg_24hour_int_list = []
+    bg_24hour_object_list = dexcom.get_glucose_readings(minutes=1440)
+    for i in bg_24hour_object_list:
+        bg_24hour_int_list.append(i.value)
+    bg_24hour_average = mean(bg_24hour_int_list)
+    print(f'24 hour blood glucose average is {round(bg_24hour_average, 2)}')
+
+
 
 
 
@@ -44,7 +53,9 @@ def main():
     glucose_average_3hour()
     print(f'\n{("*" * 75)}\n')
     glucose_average_6hour()
-
+    print(f'\n{("*" * 75)}\n')
+    glucose_average_24hour()
+    print(f'\n{("*" * 75)}\n')
 
 
 if __name__ == "__main__":

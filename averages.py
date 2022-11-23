@@ -10,7 +10,7 @@ dexcom = Dexcom(creds.usr, creds.pwd)
 def glucose_current():
     current_bg = dexcom.get_current_glucose_reading().value
     # print(f'Current glucose reading is {current_bg.value}')
-    return [0, current_bg]
+    return [1, current_bg]
 
 
 def glucose_average_1hour():
@@ -21,7 +21,7 @@ def glucose_average_1hour():
     bg_1hour_average_long = mean(bg_1hour_int_list)
     bg_1hour_average = round(bg_1hour_average_long, 2)
     # print(f'1 hour blood glucose average is {bg_1hour_average}')
-    return [1, bg_1hour_average]
+    return [2, bg_1hour_average]
 
 
 def glucose_average_3hour():
@@ -43,7 +43,7 @@ def glucose_average_6hour():
     bg_6hour_average_long = mean(bg_6hour_int_list)
     bg_6hour_average = round(bg_6hour_average_long, 2)
     # print(f'6 hour blood glucose average is {bg_6hour_average}')
-    return [6, bg_6hour_average]
+    return [4, bg_6hour_average]
 
 
 def glucose_average_12hour():
@@ -54,7 +54,7 @@ def glucose_average_12hour():
     bg_12hour_average_long = mean(bg_12hour_int_list)
     bg_12hour_average = round(bg_12hour_average_long, 2)
     # print(f'12 hour blood glucose average is {bg_12hour_average}')
-    return [12, bg_12hour_average]
+    return [5, bg_12hour_average]
 
 
 def glucose_average_24hour():
@@ -65,7 +65,7 @@ def glucose_average_24hour():
     bg_24hour_average_long = mean(bg_24hour_int_list)
     bg_24hour_average = round(bg_24hour_average_long, 2)
     # print(f'24 hour blood glucose average is {bg_24hour_average}')
-    return [24, bg_24hour_average]
+    return [6, bg_24hour_average]
 
 
 def main():

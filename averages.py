@@ -1,6 +1,6 @@
 from pydexcom import Dexcom
 from statistics import mean
-import creds
+from dexcom import creds
 
 dexcom = Dexcom(creds.usr, creds.pwd)
 # current_bg = dexcom.get_current_glucose_reading()

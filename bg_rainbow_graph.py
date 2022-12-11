@@ -41,6 +41,8 @@ fig = figure(
     x_axis_location="below",
     x_axis_label="hourly average",
     y_axis_label="mg/dl",
+    toolbar_location=None,
+    tools=""
 )
 
 fig.vbar(
@@ -50,5 +52,7 @@ fig.vbar(
     fill_color=factor_cmap("x", palette=Spectral6, factors=x),
     width=0.75,
 )
+
+fig.line(x=x, y=110, color='black', dash='dashed')
 
 show(fig)
